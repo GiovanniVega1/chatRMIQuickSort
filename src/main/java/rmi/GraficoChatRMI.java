@@ -259,6 +259,8 @@ public class GraficoChatRMI extends javax.swing.JFrame {
         final long endTimeSequential = System.nanoTime();
         jTextAreaSecuencial.append("Secuencial pos ordenamiento: " + Arrays.toString(arreglo) + "\n");
         jTextAreaSecuencial.append("Tiempo de ejecución secuencial: " + ((endTimeSequential - startTimeSequential) / 1e+9) + " segundos\n");
+        System.out.println("Secuencial pos ordenamiento: " + Arrays.toString(arreglo) + "\n");
+        System.out.println("Tiempo de ejecución secuencial: " + ((endTimeSequential - startTimeSequential) / 1e+9) + " segundos\n");
         
         
         final long startTimeConcurrent = System.nanoTime();
@@ -266,12 +268,16 @@ public class GraficoChatRMI extends javax.swing.JFrame {
         final long endTimeConcurrent = System.nanoTime();
         jTextAreaConcurrente.append("Concurrente pos ordenamineto: " + Arrays.toString(arreglo) + "\n");
         jTextAreaConcurrente.append("Tiempo de ejecución concurrente: " + ((endTimeConcurrent - startTimeConcurrent) / 1e+9) + " segundos\n");
+        System.out.println("Concurrente pos ordenamineto: " + Arrays.toString(arreglo) + "\n");
+        System.out.println("Tiempo de ejecución concurrente: " + ((endTimeConcurrent - startTimeConcurrent) / 1e+9) + " segundos\n");
 
         final long startTimeParallel = System.nanoTime();
         quickSortParallel.run();
         final long endTimeParallel = System.nanoTime();
         jTextAreaParalelo.append("Paralelo pos ordenamineto: " + Arrays.toString(arreglo) + "\n");
         jTextAreaParalelo.append("Tiempo de ejecución paralelo: " + ((endTimeParallel - startTimeParallel) / 1e+9) + " segundos\n");
+        System.out.println("Paralelo pos ordenamineto: " + Arrays.toString(arreglo) + "\n");
+        System.out.println("Tiempo de ejecución paralelo: " + ((endTimeParallel - startTimeParallel) / 1e+9) + " segundos\n");
         
         StringBuilder results = new StringBuilder();
     results.append("Resultados de ordenación:\n")
